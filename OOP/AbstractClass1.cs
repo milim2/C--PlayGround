@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP
 {
-    abstract class AbstractClass1 // 인터페이스랑 다른점 정리
+    abstract class AbstractClass1 
     {
         public void print()
         {
