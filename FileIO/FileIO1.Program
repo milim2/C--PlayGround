@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace FileIO1
+{
+
+
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            /*
+            // using (StreamWriter writer = new StreamWriter("file.txt")) 
+            //{
+            StreamWriter writer = new StreamWriter("file.txt");
+               writer.WriteLine("A");
+               writer.WriteLine("B");
+               writer.WriteLine("C");
+            //}
+          
+            */
+            /*
+                        using (StreamWriter writer = new StreamWriter("file.txt", true))
+                        {
+                            writer.WriteLine("qwerty"); // appended
+                        }
+            */
+
+            string line;
+            using (StreamReader reader = new StreamReader("file.txt"))
+            {
+                //line = reader.ReadLine();
+
+                // For homework -> Read all the contents of the file and output to the console
+                while ((line = reader.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+                
+                Console.ReadKey();
+            }
+
+        }
+    }
+}
+
