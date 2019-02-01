@@ -19,7 +19,8 @@ namespace EX08
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Customer cust = new Customer("Ian", "Mora", 20);
+            // Customer cust = new Customer("Ian", "Mora", 20);
+           Customer cust = new Customer("Ian", "Mora", new DateTime(2001, 1, 1));
             cust.Address = "444 Karr St, Oakville";
 
             //CustFullname.Text = cust.GetFullname();
@@ -30,10 +31,14 @@ namespace EX08
             CustAge.Text = cust.Age.ToString();
             CustAddress.Text = cust.Address;
             CustDescription.Text = cust.Description;
+            CustIsQualified.Text = cust.IsQualified.ToString();
 
             //bool test = cust.getIsQualified();
             bool test = cust.IsQualified;
         }
+
+        DateTime date = new DateTime(2019, 1, 31);
+       
 
         private void label2_Click(object sender, EventArgs e)
         {

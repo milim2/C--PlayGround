@@ -10,18 +10,21 @@ namespace EX08
     {
         public string Firstname;
         public string Lastname;
-        private int _Age;
+        private DateTime _Birthday;
+        // private int _Age;
         private bool _IsQualified;
         public string Address;
         public string Description;
 
-        public Customer(string firstname, string lastname, int age)
+        public Customer(string firstname, string lastname, DateTime birthday)
         {
             this.Firstname = firstname;
             this.Lastname = lastname;
-            this._Age = age;
+            // this._Age = age;
 
-            this._IsQualified = age >= 18;
+            this._Birthday = birthday;
+            // this._IsQualified = DateTime.Now.Year - birthday.Year >= 18;
+            this._IsQualified = Age >= 18;
         }
         /*
         public int GetAge()
@@ -34,7 +37,7 @@ namespace EX08
             _Age = age;
             _IsQualified = age >= 18;
         }
-        */
+        
 
         public int Age
         {
@@ -46,13 +49,28 @@ namespace EX08
             }
         }
 
-        /*
+     
         public bool getIsQualified()
         {
             return _IsQualified;
         }
         */
 
+        public int Age
+        {
+            get { return DateTime.Now.Year - _Birthday.Year; }
+        }
+        public DateTime Birthday
+        {
+            get { return _Birthday; }
+            set
+            {
+                _Birthday = value;
+                // _IsQualified = DateTime.Now.Year - value.Year >= 18;
+                _IsQualified = Age >= 18;
+            }
+        }
+        
         public bool IsQualified
         {
             get
@@ -60,6 +78,7 @@ namespace EX08
                 return _IsQualified;
             }
         }
+
         /*
         public string GetFullname()
         {
@@ -73,6 +92,6 @@ namespace EX08
             {
                 return Firstname + " " + Lastname;
             }
-        }
+        }        
     }
 }
