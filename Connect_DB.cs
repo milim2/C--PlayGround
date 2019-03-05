@@ -39,8 +39,8 @@ namespace Connect_DB2
            // private void RefreshData()
             {
                  SqlConnection conn = new SqlConnection(); // the following provides information to 
-                // connect to the Week6A database
-                conn.ConnectionString = "Server=(local); Database=Week7A; User = mlee; Password = mlee1234";
+                // connect to the Week7A database
+                conn.ConnectionString = "Server=(local); Database=Week7A; User = ****; Password = ********";
 
                 // we will need a command object to execute a query
                 //conn.ConnectionString = conString;
@@ -89,7 +89,7 @@ namespace Connect_DB2
                 {
                     cmd.Dispose(); // cleans up memory
                     conn.Close(); // close the connection
-                    //RefreshData(); // 항상 업데이트상황인대로 볼수 있다
+                    //RefreshData(); 
 
                 }
 
